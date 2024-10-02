@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-12">
+        <form (ngSubmit)="onSubmit()" #solicitudForm="ngForm">
+            <fieldset class="form-group">
+                <label class="control-label" for="id_mascota">Id Mascota</label>
+                <input type="text" class="form-control" required [(ngModel)]="solicitud.id_mascota" name="id_mascota">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="nombre_adoptante">Nombre Adoptante</label>
+                <input type="text" class="form-control" required [(ngModel)]="solicitud.nombre_adoptante" name="nombre_adoptante">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="telefono_adoptante">Teléfono Adoptante</label>
+                <input type="tel" class="form-control" required [(ngModel)]="solicitud.telefono_adoptante" name="telefono_adoptante">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="correo_adoptante">Correo Adoptante</label>
+                <input type="email" class="form-control" required [(ngModel)]="solicitud.correo_adoptante" name="correo_adoptante">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="direccion_adoptante">Dirección Adoptante</label>
+                <input type="text" class="form-control" required [(ngModel)]="solicitud.direccion_adoptante" name="direccion_adoptante">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="estado_solicitud">Estado Solicitud</label>
+                <input type="text" class="form-control" required [(ngModel)]="solicitud.estado_solicitud" name="estado_solicitud">
+            </fieldset>
+            <br>
+            <fieldset class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" [disabled]="!solicitudForm.form.valid">Enviar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

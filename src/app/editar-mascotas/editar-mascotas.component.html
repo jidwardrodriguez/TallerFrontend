@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-sm-12">
+        <form (ngSubmit)="onSubmit()" #mascotaForm="ngForm">
+            <fieldset class="form-group">
+                <label class="control-label" for="nombre">Nombre</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.nombre" name="nombre">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="edad">Edad</label>
+                <input type="number" class="form-control" required [(ngModel)]="mascota.edad" name="edad">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="tipo">Tipo</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.tipo" name="tipo">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="sexo">Sexo</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.sexo" name="sexo">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="color">Color</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.color" name="color">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="esterilizado">Esterilizado</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.esterilizado" name="esterilizado">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="adoptado">Adoptado</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.adoptado" name="adoptado">
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label" for="vacunado">Vacunado</label>
+                <input type="text" class="form-control" required [(ngModel)]="mascota.vacunado" name="vacunado">
+            </fieldset>
+            <br>
+            <fieldset class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" [disabled]="!mascotaForm.form.valid">Enviar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

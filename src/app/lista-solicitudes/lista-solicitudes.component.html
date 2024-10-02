@@ -1,0 +1,44 @@
+<div class="container">
+    <h3>SOLICITUDES</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline">
+                <fieldset class="form-group col-sm-11"></fieldset>
+                <fieldset class="form-group col-sm-1">
+                    <a class="btn btn-primary" [routerLink]="['/solicitudes/agregar']">Nueva Solicitud</a>
+                </fieldset>
+            </form>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr class="row">
+                        <th class="col-sm-1">ID Adoptante</th>
+                        <th class="col-sm-1">ID Mascota</th>
+                        <th class="col-sm-2">Nombre</th>
+                        <th class="col-sm-2">Teléfono</th>
+                        <th class="col-sm-2">Correo</th>
+                        <th class="col-sm-2">Dirección</th>
+                        <th class="col-sm-1">Estado</th>
+                        <th class="col-sm-1">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let solicitud of solicitudes | async" class="row">
+                        <td class="col-sm-1">{{ solicitud.id_adoptante }}</td>
+                        <td class="col-sm-1">{{ solicitud.id_mascota }}</td>
+                        <td class="col-sm-2">{{ solicitud.nombre_adoptante }}</td>
+                        <td class="col-sm-2">{{ solicitud.telefono_adoptante }}</td>
+                        <td class="col-sm-2">{{ solicitud.correo_adoptante }}</td>
+                        <td class="col-sm-2">{{ solicitud.direccion_adoptante }}</td>
+                        <td class="col-sm-1">{{ solicitud.estado_solicitud }}</td>
+                        <td class="col-sm-1">
+                            <button class="btn btn-info" [routerLink]="['/solicitudes/editar/', solicitud.id_adoptante]">Editar</button>
+                            <button class="btn btn-danger" (click)="eliminarSolicitud(solicitud.id_adoptante)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
