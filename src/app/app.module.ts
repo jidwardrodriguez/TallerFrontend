@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { ListaSolicitudesComponent } from './lista-solicitudes/lista-solicitudes.component';
 import { EditarSolicitudesComponent } from './editar-solicitudes/editar-solicitudes.component';
 import { SolicitudService } from './shared/solicitud.service';
+import { MainCaninosComponent } from './main-caninos/main-caninos.component';
+import { CarrusellComponent } from './carrusell/carrusell.component';
+import { MenuComponent } from './menu/menu.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { SolicitudService } from './shared/solicitud.service';
     ListaMascotasComponent,
     EditarMascotasComponent,
     ListaSolicitudesComponent,
-    EditarSolicitudesComponent
+    EditarSolicitudesComponent,
+    MainCaninosComponent,
+    CarrusellComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     MascotaService,
@@ -33,6 +39,7 @@ import { SolicitudService } from './shared/solicitud.service';
     provideHttpClient(),
     provideClientHydration()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]  
 })
+
 export class AppModule { }

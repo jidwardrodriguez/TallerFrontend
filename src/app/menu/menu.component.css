@@ -1,0 +1,8 @@
+:host {
+    display: block;
+    position: fixed; /* Mantiene el menú fijo en la parte superior */
+    top: 0; /* Alinea al inicio de la ventana */
+    left: 0;
+    width: 100%; /* El menú ocupa todo el ancho de la ventana */
+    z-index: 1000; /* Asegura que el menú esté siempre visible */
+}

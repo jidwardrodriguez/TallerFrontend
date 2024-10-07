@@ -13,6 +13,9 @@ export class EditarMascotasComponent implements OnInit {
   idMascota = '';
   mascota: MascotaModel = new MascotaModel('', '', '', '', '', '', '', '', '');
 
+  mensaje: string = '';
+  tipoMensaje: 'success' | 'error' = 'success';
+
   constructor(
     private mascotaService: MascotaService,
     private route: ActivatedRoute,
@@ -40,26 +43,35 @@ export class EditarMascotasComponent implements OnInit {
     }
   }
 
+
   onSubmit() {
     console.log("On Submit");
     if (this.mascota.id) {
       this.mascotaService.actualizarMascota(this.mascota).subscribe({
         next: (data) => {
           console.log(data);
+          this.mensaje = 'La mascota se actualizó correctamente.'; // Mensaje de éxito
+          this.tipoMensaje = 'success';
           this.router.navigate(['/mascotas']);
         },
         error: (err) => {
           console.log(`Error al actualizar ${err}`);
+          this.mensaje = 'Hubo un error al actualizar la mascota. Inténtelo de nuevo.'; // Mensaje de error
+          this.tipoMensaje = 'error';
         }
       });
     } else {
       this.mascotaService.agregarMascota(this.mascota).subscribe({
         next: (data) => {
           console.log(data);
+          this.mensaje = 'La mascota se registró correctamente.'; // Mensaje de éxito
+          this.tipoMensaje = 'success';
           this.router.navigate(['/mascotas']);
         },
         error: (err) => {
-          console.log(`Error al Agregar ${err}`);
+          console.log(`Error al agregar ${err}`);
+          this.mensaje = 'Hubo un error al agregar la mascota. Inténtelo de nuevo.'; // Mensaje de error
+          this.tipoMensaje = 'error';
         }
       });
     }

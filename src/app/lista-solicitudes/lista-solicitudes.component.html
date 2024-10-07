@@ -1,11 +1,12 @@
 <div class="container">
-    <h3>SOLICITUDES</h3>
     <div class="row">
         <div class="col-sm-12">
+            <br>
+            <h3 style="text-align: center;">SOLICITUDES</h3>
             <form class="form-inline">
                 <fieldset class="form-group col-sm-11"></fieldset>
                 <fieldset class="form-group col-sm-1">
-                    <a class="btn btn-primary" [routerLink]="['/solicitudes/agregar']">Nueva Solicitud</a>
+                    <a class="btn btn-success" [routerLink]="['/solicitudes/agregar']">Nueva Solicitud</a>
                 </fieldset>
             </form>
             <br>
@@ -14,11 +15,11 @@
                     <tr class="row">
                         <th class="col-sm-1">ID Adoptante</th>
                         <th class="col-sm-1">ID Mascota</th>
-                        <th class="col-sm-2">Nombre</th>
-                        <th class="col-sm-2">Teléfono</th>
-                        <th class="col-sm-2">Correo</th>
-                        <th class="col-sm-2">Dirección</th>
-                        <th class="col-sm-1">Estado</th>
+                        <th class="col-sm-2">Nombre Adoptante</th>
+                        <th class="col-sm-2">Teléfono Adoptante</th>
+                        <th class="col-sm-2">Correo Adoptante</th>
+                        <th class="col-sm-2">Dirección Adoptante</th>
+                        <th class="col-sm-1">Estado Adoptante</th>
                         <th class="col-sm-1">Acciones</th>
                     </tr>
                 </thead>
@@ -32,8 +33,8 @@
                         <td class="col-sm-2">{{ solicitud.direccion_adoptante }}</td>
                         <td class="col-sm-1">{{ solicitud.estado_solicitud }}</td>
                         <td class="col-sm-1">
-                            <button class="btn btn-info" [routerLink]="['/solicitudes/editar/', solicitud.id_adoptante]">Editar</button>
-                            <button class="btn btn-danger" (click)="eliminarSolicitud(solicitud.id_adoptante)">Eliminar</button>
+                            <button class="btn btn-primary" [routerLink]="['/solicitudes/editar/', solicitud.id_adoptante]">Editar</button>
+                            <button class="btn btn-danger" (click)="eliminarSolicitud(solicitud.id_adoptante)">Borrar</button>
                         </td>
                     </tr>
                 </tbody>

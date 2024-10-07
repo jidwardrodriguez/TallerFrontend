@@ -1,12 +1,12 @@
 <div class="container">
-    <h3>MASCOTAS</h3>
     <div class="row">
         <div class="col-sm-12">
+            <br>
+            <h3 style="text-align: center;">MASCOTAS</h3>
             <form class="form-inline">
-                <fieldset class="form-group col-sm-11"></fieldset>
                 <fieldset class="form-group col-sm-1">
-                    <a class="btn btn-primary" [routerLink]="['/mascotas/agregar']">Nueva Mascota</a>
-                </fieldset>
+                    <a class="btn btn-success" [routerLink]="['/mascotas/agregar']">Nueva Mascota</a>
+                </fieldset>                
             </form>
             <br>
             <table class="table table-striped">
@@ -36,8 +36,8 @@
                         <td class="col-sm-1">{{ mascota.adoptado }}</td>
                         <td class="col-sm-1">{{ mascota.vacunado }}</td>
                         <td class="col-sm-2">
-                            <button class="btn btn-info" [routerLink]="['/mascotas/editar/', mascota.id]">Editar</button>
-                            <button class="btn btn-danger" (click)="eliminarMascota(mascota.id)">Eliminar</button>
+                            <button class="btn btn-primary" [routerLink]="['/mascotas/editar/', mascota.id]">Editar</button>
+                            <button class="btn btn-danger" (click)="eliminarMascota(mascota.id)">Borrar</button>
                         </td>
                     </tr>
                 </tbody>
